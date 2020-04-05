@@ -1,0 +1,26 @@
+﻿@page "/"
+@namespace GamingNomads.Server.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="54D44InGg5I8Efbo1n0JIFqdbi2AFdaxwHoVMISbJ7A" />
+    <title>Gaming Nomads</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="css/site.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/273d0585ea.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <app>
+        @(await Html.RenderComponentAsync<App>(RenderMode.ServerPrerendered))
+    </app>
+
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>
