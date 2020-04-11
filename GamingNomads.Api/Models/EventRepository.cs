@@ -1,11 +1,10 @@
-﻿using System;
+﻿using GamingNomads.Shared.EventManager;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using GamingNomads.Shared.EventManager;
-using Microsoft.AspNetCore.Mvc;
 
 namespace GamingNomads.Api.Models
 {
@@ -23,20 +22,22 @@ namespace GamingNomads.Api.Models
 
         public IEnumerable<Show> GetAllEvents()
         {
+            XElement EventsXML = GetEventsXML();
             IList<Show> result = new List<Show>();
 
-            foreach (var data in GetEventsXML().Elements("Event"))
+            foreach (var data in EventsXML.Elements("Event"))
             {
-                Show show = new Show()
-                {
-                    Id = int.Parse(data.Element("Id").Value),
-                    Name = data.Element("Name").Value,
-                    URL = data.Element("URL").Value,
-                    DatesText = data.Element("Dates").Value,
-                    Games = XmlConvert.ToBoolean(data.Element("Games").Value),
-                    Artemis = XmlConvert.ToBoolean(data.Element("Artemis").Value),
-                    LaserTag = XmlConvert.ToBoolean(data.Element("LaserTag").Value)
-                };
+                Show show = new Show();
+                show.Id = int.Parse(data.Element("Id").Value);
+                show.Name = data.Element("Name").Value;
+                show.Year = int.Parse(data.Attribute("year").Value);
+                show.Month = int.Parse(data.Attribute("month").Value);
+                show.IsTentative = bool.Parse(data.Attribute("tentative").Value);
+                show.URL = data.Element("URL").Value;
+                show.DatesText = data.Element("Dates").Value;
+                show.Games = XmlConvert.ToBoolean(data.Element("Games").Value);
+                show.Artemis = XmlConvert.ToBoolean(data.Element("Artemis").Value);
+                show.LaserTag = XmlConvert.ToBoolean(data.Element("LaserTag").Value);
 
                 result.Add(show);
             }
@@ -60,6 +61,9 @@ namespace GamingNomads.Api.Models
             XElement result = new XElement("Events");
 
             result.Add(new XElement("Event",
+                new XAttribute("year","2019"),
+                new XAttribute("month","1"),
+                new XAttribute("tentative","false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "Codemash V2.0.1.9"),
                 new XElement("URL", "http://www.codemash.org"),
@@ -69,6 +73,9 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", true)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "1"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "AWH Teambuilding Event(Private)"),
                 new XElement("URL", "http://awh.net"),
@@ -78,6 +85,9 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "3"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "Adepticon"),
                 new XElement("URL", "http://www.adepticon.org"),
@@ -87,8 +97,11 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
-                 new XElement("Id", (++index).ToString()),
-               new XElement("Name", "LexiCon"),
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "4"),
+                new XAttribute("tentative", "false"),
+                new XElement("Id", (++index).ToString()),
+                new XElement("Name", "LexiCon"),
                 new XElement("URL", "http://lexicongaming.com"),
                 new XElement("Dates", "April 5 - 7"),
                 new XElement("Games", true),
@@ -96,8 +109,11 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "5"),
+                new XAttribute("tentative", "true"),
                 new XElement("Id", (++index).ToString()),
-                new XElement("Name", "Rathacon ?"),
+                new XElement("Name", "Rathacon"),
                 new XElement("URL", "http://www.therathacon.com/"),
                 new XElement("Dates", "May 12"),
                 new XElement("Games", false),
@@ -105,6 +121,9 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "6"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "Origins"),
                 new XElement("URL", "http://www.originsgamefair.com"),
@@ -114,6 +133,9 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", true)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "7"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "Charcon"),
                 new XElement("URL", "http://charcon.org"),
@@ -123,8 +145,11 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "7"),
+                new XAttribute("tentative", "true"),
                 new XElement("Id", (++index).ToString()),
-                new XElement("Name", "WBC ?"),
+                new XElement("Name", "WBC"),
                 new XElement("URL", "https://www.boardgamers.org/wbcindex.html"),
                 new XElement("Dates", "July 24 - 28"),
                 new XElement("Games", true),
@@ -132,6 +157,9 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "8"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "GenCon"),
                 new XElement("URL", "http://www.gencon.com"),
@@ -141,6 +169,9 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", true)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "8"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "THAT Conference"),
                 new XElement("URL", "http://www.thatconference.com/"),
@@ -150,15 +181,9 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
-                new XElement("Id", (++index).ToString()),
-                new XElement("Name", "GrandCon"),
-                new XElement("URL", "http://www.grand-con.com/registration"),
-                new XElement("Dates", "September 15 - 17"),
-                new XElement("Games", true),
-                new XElement("Artemis", true),
-                new XElement("LaserTag", false)));
-
-            result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "9"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "BGF"),
                 new XElement("URL", "http://www.buckeyegamefest.com/"),
@@ -168,6 +193,21 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "9"),
+                new XAttribute("tentative", "false"),
+                new XElement("Id", (++index).ToString()),
+                new XElement("Name", "GrandCon"),
+                new XElement("URL", "http://www.grand-con.com/registration"),
+                new XElement("Dates", "September 15 - 17"),
+                new XElement("Games", true),
+                new XElement("Artemis", true),
+                new XElement("LaserTag", false)));
+
+            result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "10"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "CinCityCon"),
                 new XElement("URL", "http://cincitycon.com/"),
@@ -177,6 +217,9 @@ namespace GamingNomads.Api.Models
                 new XElement("LaserTag", false)));
 
             result.Add(new XElement("Event",
+                new XAttribute("year", "2019"),
+                new XAttribute("month", "11"),
+                new XAttribute("tentative", "false"),
                 new XElement("Id", (++index).ToString()),
                 new XElement("Name", "AcadeCon"),
                 new XElement("URL", "https://acadecon.com/"),

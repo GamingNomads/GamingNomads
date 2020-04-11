@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Events>
+  <Event year="2019" month="1" tentative="false">
+    <Id>1</Id>
+    <Name>Codemash V2.0.1.9</Name>
+    <URL>http://www.codemash.org</URL>
+    <Dates>January 8 - 11</Dates>
+    <Games>true</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>true</LaserTag>
+  </Event>
+  <Event year="2019" month="1" tentative="false">
+    <Id>2</Id>
+    <Name>AWH Teambuilding Event(Private)</Name>
+    <URL>http://awh.net</URL>
+    <Dates>January 14</Dates>
+    <Games>false</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="3" tentative="false">
+    <Id>3</Id>
+    <Name>Adepticon</Name>
+    <URL>http://www.adepticon.org</URL>
+    <Dates>March 27 - March 31</Dates>
+    <Games>true</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="4" tentative="false">
+    <Id>4</Id>
+    <Name>LexiCon</Name>
+    <URL>http://lexicongaming.com</URL>
+    <Dates>April 5 - 7</Dates>
+    <Games>true</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="5" tentative="true">
+    <Id>5</Id>
+    <Name>Rathacon</Name>
+    <URL>http://www.therathacon.com/</URL>
+    <Dates>May 12</Dates>
+    <Games>false</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="6" tentative="false">
+    <Id>6</Id>
+    <Name>Origins</Name>
+    <URL>http://www.originsgamefair.com</URL>
+    <Dates>June 12 - 16</Dates>
+    <Games>false</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>true</LaserTag>
+  </Event>
+  <Event year="2019" month="7" tentative="false">
+    <Id>7</Id>
+    <Name>Charcon</Name>
+    <URL>http://charcon.org</URL>
+    <Dates>July 20 - 22</Dates>
+    <Games>true</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="7" tentative="true">
+    <Id>8</Id>
+    <Name>WBC</Name>
+    <URL>https://www.boardgamers.org/wbcindex.html</URL>
+    <Dates>July 24 - 28</Dates>
+    <Games>true</Games>
+    <Artemis>false</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="8" tentative="false">
+    <Id>9</Id>
+    <Name>GenCon</Name>
+    <URL>http://www.gencon.com</URL>
+    <Dates>August 1 - 4</Dates>
+    <Games>false</Games>
+    <Artemis>false</Artemis>
+    <LaserTag>true</LaserTag>
+  </Event>
+  <Event year="2019" month="8" tentative="false">
+    <Id>10</Id>
+    <Name>THAT Conference</Name>
+    <URL>http://www.thatconference.com/</URL>
+    <Dates>August 6 - 8</Dates>
+    <Games>false</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="9" tentative="false">
+    <Id>11</Id>
+    <Name>GrandCon</Name>
+    <URL>http://www.grand-con.com/registration</URL>
+    <Dates>September 15 - 17</Dates>
+    <Games>true</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="9" tentative="false">
+    <Id>12</Id>
+    <Name>BGF</Name>
+    <URL>http://www.buckeyegamefest.com/</URL>
+    <Dates>September 12 - 15</Dates>
+    <Games>true</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="10" tentative="false">
+    <Id>13</Id>
+    <Name>CinCityCon</Name>
+    <URL>http://cincitycon.com/</URL>
+    <Dates>October 11 - 13</Dates>
+    <Games>true</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+  <Event year="2019" month="11" tentative="false">
+    <Id>14</Id>
+    <Name>AcadeCon</Name>
+    <URL>https://acadecon.com/</URL>
+    <Dates>November 8 - 10</Dates>
+    <Games>true</Games>
+    <Artemis>true</Artemis>
+    <LaserTag>false</LaserTag>
+  </Event>
+</Events>

@@ -24,9 +24,9 @@ else
                 @foreach (var show in EventCalendar)
                 {
                 <tr>
-                    @if (show.Name.EndsWith("?"))
+                    @if (show.IsTentative)
                     {
-                        <td><a href="@show.URL" target="_blank">@show.Name.Replace("?", string.Empty) </a><span class="oi oi-calendar"></span></td>
+                        <td><a href="@show.URL" target="_blank">@show.Name </a><span class="oi oi-calendar"></span></td>
                     }
                     else
                     {
